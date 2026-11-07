@@ -1,0 +1,65 @@
+OK: Unit Driver empty
+OK: Unit Driver empty average
+OK: Unit Driver blank name
+OK: Unit Driver null team
+OK: Unit Driver negative points
+OK: Unit Driver Add
+OK: Unit Driver ReadById / trim / Unicode / quote
+OK: Unit Driver zero points
+OK: Unit Driver ReadAll ordered
+OK: Unit Driver case-insensitive filter
+OK: Unit Driver null filter
+OK: Unit Driver average
+OK: Unit Driver invalid Update
+OK: Unit Driver invalid Update leaves data intact
+OK: Unit Driver Update
+OK: Unit Driver persisted Update
+OK: Unit Driver Update missing
+OK: Unit Driver Update invalid ID
+OK: Unit Driver ReadById missing
+OK: Unit Driver Delete missing
+OK: Unit Driver Delete
+OK: Unit Driver first free ID reused
+OK: Unit Driver no implicit write
+OK: Unit Driver all deleted
+OK: Unit Race empty
+OK: Unit Race blank name
+OK: Unit Race blank country
+OK: Unit Race zero laps
+OK: Unit Race negative laps
+OK: Unit Race Add
+OK: Unit Race ReadById / trim / Unicode / quote
+OK: Unit Race second Add
+OK: Unit Race ReadAll ordered
+OK: Unit Race invalid Update
+OK: Unit Race invalid Update leaves data intact
+OK: Unit Race Update
+OK: Unit Race persisted Update
+OK: Unit Race Update missing
+OK: Unit Race invalid ID
+OK: Unit Race ReadById missing
+OK: Unit Race Delete missing
+OK: Unit Race Delete
+OK: Unit Race first free ID reused
+OK: Unit Race no implicit write
+OK: Unit Race all deleted
+OK: Driver ID contract
+OK: Race ID contract
+OK: Driver View has no extra ID column
+OK: Driver null repository
+OK: Race null repository
+OK: Unknown provider rejected before connecting
+OK: EntityRepository`1 Add null
+OK: EntityRepository`1 Update null
+OK: EntityRepository`1 Add invalid ID
+OK: EntityRepository`1 Update invalid ID
+OK: DapperRepository`1 Add null
+OK: DapperRepository`1 Update null
+OK: DapperRepository`1 Add invalid ID
+OK: DapperRepository`1 Update invalid ID
+OK: EF model: two entities
+OK: EF model: Id primary keys
+OK: EF model: two tables
+OK: EF model compiles
+Database integration tests NOT RUN. Use --database on Windows with SQL Server.
+PASS: 63 checks.

@@ -1,0 +1,15 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  F1DriverSystem.Models -> /home/user/workspace/output/F1DriverSystem/F1DriverSystem.Models/bin/Release/net48/F1DriverSystem.Models.dll
+  F1DriverSystem.DataAccessLayer -> /home/user/workspace/output/F1DriverSystem/F1DriverSystem.DataAccessLayer/bin/Release/net48/F1DriverSystem.DataAccessLayer.dll
+  F1DriverSystem.Core -> /home/user/workspace/output/F1DriverSystem/F1DriverSystem.Core/bin/Release/net48/F1DriverSystem.Core.dll
+  F1DriverSystem.Tests -> /home/user/workspace/output/F1DriverSystem/F1DriverSystem.Tests/bin/Release/net48/F1DriverSystem.Tests.exe
+  F1DriverSystem.ConsoleApp -> /home/user/workspace/output/F1DriverSystem/F1DriverSystem.ConsoleApp/bin/Release/net48/F1DriverSystem.ConsoleApp.exe
+  F1DriverSystem.RacesConsoleApp -> /home/user/workspace/output/F1DriverSystem/F1DriverSystem.RacesConsoleApp/bin/Release/net48/F1DriverSystem.RacesConsoleApp.exe
+  F1DriverSystem.WinFormsApp -> /home/user/workspace/output/F1DriverSystem/F1DriverSystem.WinFormsApp/bin/Release/net48/F1DriverSystem.WinFormsApp.exe
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.65

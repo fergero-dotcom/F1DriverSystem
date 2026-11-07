@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\F1DriverSystem.Core\F1DriverSystem.Core.csproj" />
+    <None Include="..\App.config" Link="App.config" />
+  </ItemGroup>
+</Project>

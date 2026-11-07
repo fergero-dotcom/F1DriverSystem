@@ -1,0 +1,12 @@
+PASS: F1DriverSystem.ConsoleApp/Program.cs (XML documentation excluded; executable code/resources unchanged).
+PASS: F1DriverSystem.WinFormsApp/EditDriverForm.Designer.cs (XML documentation excluded; executable code/resources unchanged).
+PASS: F1DriverSystem.WinFormsApp/EditDriverForm.cs (XML documentation excluded; executable code/resources unchanged).
+PASS: F1DriverSystem.WinFormsApp/EditDriverForm.resx (XML documentation excluded; executable code/resources unchanged).
+PASS: F1DriverSystem.WinFormsApp/MainForm.Designer.cs (XML documentation excluded; executable code/resources unchanged).
+PASS: F1DriverSystem.WinFormsApp/MainForm.cs (XML documentation excluded; executable code/resources unchanged).
+PASS: F1DriverSystem.WinFormsApp/MainForm.resx (XML documentation excluded; executable code/resources unchanged).
+PASS: F1DriverSystem.WinFormsApp/Program.cs (XML documentation excluded; executable code/resources unchanged).
+PASS: F1DriverSystem.WinFormsApp/Properties/Settings.Designer.cs (XML documentation excluded; executable code/resources unchanged).
+PASS: F1DriverSystem.WinFormsApp/Properties/Settings.settings (XML documentation excluded; executable code/resources unchanged).
+PASS: all 23 seed rows match original Logic.cs.
+PASS: all 114 XML documentation blocks are empty templates.

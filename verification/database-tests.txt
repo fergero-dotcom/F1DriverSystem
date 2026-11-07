@@ -1,0 +1,101 @@
+OK: Database initial seed
+OK: EF Driver empty
+OK: EF Driver empty average
+OK: EF Driver blank name
+OK: EF Driver null team
+OK: EF Driver negative points
+OK: EF Driver Add
+OK: EF Driver ReadById / trim / Unicode / quote
+OK: EF Driver zero points
+OK: EF Driver ReadAll ordered
+OK: EF Driver case-insensitive filter
+OK: EF Driver null filter
+OK: EF Driver average
+OK: EF Driver invalid Update
+OK: EF Driver invalid Update leaves data intact
+OK: EF Driver Update
+OK: EF Driver persisted Update
+OK: EF Driver Update missing
+OK: EF Driver Update invalid ID
+OK: EF Driver ReadById missing
+OK: EF Driver Delete missing
+OK: EF Driver Delete
+OK: EF Driver first free ID reused
+OK: EF Driver no implicit write
+OK: EF Driver all deleted
+OK: EF Race empty
+OK: EF Race blank name
+OK: EF Race blank country
+OK: EF Race zero laps
+OK: EF Race negative laps
+OK: EF Race Add
+OK: EF Race ReadById / trim / Unicode / quote
+OK: EF Race second Add
+OK: EF Race ReadAll ordered
+OK: EF Race invalid Update
+OK: EF Race invalid Update leaves data intact
+OK: EF Race Update
+OK: EF Race persisted Update
+OK: EF Race Update missing
+OK: EF Race invalid ID
+OK: EF Race ReadById missing
+OK: EF Race Delete missing
+OK: EF Race Delete
+OK: EF Race first free ID reused
+OK: EF Race no implicit write
+OK: EF Race all deleted
+OK: Dapper Driver empty
+OK: Dapper Driver empty average
+OK: Dapper Driver blank name
+OK: Dapper Driver null team
+OK: Dapper Driver negative points
+OK: Dapper Driver Add
+OK: Dapper Driver ReadById / trim / Unicode / quote
+OK: Dapper Driver zero points
+OK: Dapper Driver ReadAll ordered
+OK: Dapper Driver case-insensitive filter
+OK: Dapper Driver null filter
+OK: Dapper Driver average
+OK: Dapper Driver invalid Update
+OK: Dapper Driver invalid Update leaves data intact
+OK: Dapper Driver Update
+OK: Dapper Driver persisted Update
+OK: Dapper Driver Update missing
+OK: Dapper Driver Update invalid ID
+OK: Dapper Driver ReadById missing
+OK: Dapper Driver Delete missing
+OK: Dapper Driver Delete
+OK: Dapper Driver first free ID reused
+OK: Dapper Driver no implicit write
+OK: Dapper Driver all deleted
+OK: Dapper Race empty
+OK: Dapper Race blank name
+OK: Dapper Race blank country
+OK: Dapper Race zero laps
+OK: Dapper Race negative laps
+OK: Dapper Race Add
+OK: Dapper Race ReadById / trim / Unicode / quote
+OK: Dapper Race second Add
+OK: Dapper Race ReadAll ordered
+OK: Dapper Race invalid Update
+OK: Dapper Race invalid Update leaves data intact
+OK: Dapper Race Update
+OK: Dapper Race persisted Update
+OK: Dapper Race Update missing
+OK: Dapper Race invalid ID
+OK: Dapper Race ReadById missing
+OK: Dapper Race Delete missing
+OK: Dapper Race Delete
+OK: Dapper Race first free ID reused
+OK: Dapper Race no implicit write
+OK: Dapper Race all deleted
+OK: Driver EF write / Dapper read
+OK: Driver Dapper write / EF read
+OK: Driver shared Delete
+OK: Race Dapper write / EF read
+OK: Race EF write / Dapper read
+OK: Race shared Delete
+OK: Empty table is not reseeded on restart
+OK: Race deletion persists after reinitialize
+Temporary test database removed: F1DriverSystem_Lab2_Tests_6a5623565a8e4c8882b8948c8cb8aae1
+PASS: 99 checks.

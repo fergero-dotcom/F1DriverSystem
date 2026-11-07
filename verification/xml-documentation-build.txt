@@ -1,0 +1,11 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  F1DriverSystem.Models -> /home/user/workspace/output/F1DriverSystem/F1DriverSystem.Models/bin/Release/net48/F1DriverSystem.Models.dll
+  F1DriverSystem.DataAccessLayer -> /home/user/workspace/output/F1DriverSystem/F1DriverSystem.DataAccessLayer/bin/Release/net48/F1DriverSystem.DataAccessLayer.dll
+  F1DriverSystem.Core -> /home/user/workspace/output/F1DriverSystem/F1DriverSystem.Core/bin/Release/net48/F1DriverSystem.Core.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.40
