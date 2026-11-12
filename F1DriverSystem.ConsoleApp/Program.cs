@@ -1,18 +1,24 @@
 using System;
 using System.Collections.Generic;
 using F1DriverSystem.Core;
+using Ninject;
 
 namespace F1DriverSystem.ConsoleApp
 {
     /// <summary>
-    /// Общий контракт для сущностей, которые хранятся в базе данных.
+    /// Консольное приложение системы учёта гонщиков Ф1.
+    /// Объект бизнес-логики создаётся через IoC-контейнер Ninject,
+    /// который автоматически внедряет репозиторий в объект BL.
     /// </summary>
     internal class Program
     {
-        private static readonly Logic logic = new Logic();
+        private static readonly IKernel ninjectKernel =
+            new StandardKernel(new SimpleConfigModule());
+
+        private static readonly Logic logic = ninjectKernel.Get<Logic>();
 
         /// <summary>
-        /// Идентификатор сущности. Значение должно быть положительным.
+        /// Точка входа в приложение.
         /// </summary>
         private static void Main(string[] args)
         {
@@ -48,8 +54,9 @@ namespace F1DriverSystem.ConsoleApp
         }
 
         /// <summary>
-        /// 
+        /// Выводит список гонщиков на консоль.
         /// </summary>
+        /// <param name="drivers">Список гонщиков.</param>
         private static void PrintDrivers(List<Driver> drivers)
         {
             if (drivers.Count == 0)
@@ -62,8 +69,10 @@ namespace F1DriverSystem.ConsoleApp
         }
 
         /// <summary>
-        /// 
+        /// Считывает обязательное строковое значение.
         /// </summary>
+        /// <param name="prompt">Текст приглашения.</param>
+        /// <returns>Непустая строка.</returns>
         private static string ReadRequired(string prompt)
         {
             while (true)
@@ -76,8 +85,9 @@ namespace F1DriverSystem.ConsoleApp
         }
 
         /// <summary>
-        /// 
+        /// Считывает неотрицательное количество очков.
         /// </summary>
+        /// <returns>Целое число, не меньше нуля.</returns>
         private static int ReadPoints()
         {
             while (true)
@@ -90,7 +100,7 @@ namespace F1DriverSystem.ConsoleApp
         }
 
         /// <summary>
-        /// 
+        /// Добавляет гонщика на основе введённых данных.
         /// </summary>
         private static void AddDriver()
         {
@@ -101,7 +111,7 @@ namespace F1DriverSystem.ConsoleApp
         }
 
         /// <summary>
-        /// 
+        /// Удаляет гонщика по введённому идентификатору.
         /// </summary>
         private static void DeleteDriver()
         {
@@ -113,7 +123,7 @@ namespace F1DriverSystem.ConsoleApp
         }
 
         /// <summary>
-        /// 
+        /// Изменяет данные существующего гонщика.
         /// </summary>
         private static void EditDriver()
         {
@@ -129,7 +139,7 @@ namespace F1DriverSystem.ConsoleApp
         }
 
         /// <summary>
-        /// 
+        /// Запрашивает название команды и выводит её гонщиков.
         /// </summary>
         private static void FilterDrivers()
         {

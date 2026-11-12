@@ -6,6 +6,9 @@
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Ninject" Version="3.3.6" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\F1DriverSystem.Core\F1DriverSystem.Core.csproj" />
     <None Include="..\App.config" Link="App.config" />
     <Compile Update="MainForm.cs;EditDriverForm.cs">

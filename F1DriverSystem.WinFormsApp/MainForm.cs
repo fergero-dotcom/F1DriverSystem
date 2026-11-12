@@ -2,18 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using F1DriverSystem.Core;
+using Ninject;
 
 namespace F1DriverSystem.WinFormsApp
 {
     /// <summary>
-    /// 
+    /// Главная форма системы учёта гонщиков Ф1.
+    /// Объект бизнес-логики создаётся через IoC-контейнер Ninject,
+    /// который автоматически внедряет репозиторий в объект BL.
     /// </summary>
     public partial class MainForm : Form
     {
-        private readonly Logic logic = new Logic();
+        private static readonly IKernel ninjectKernel =
+            new StandardKernel(new SimpleConfigModule());
+
+        private readonly Logic logic = ninjectKernel.Get<Logic>();
 
         /// <summary>
-        /// 
+        /// Инициализирует главную форму и загружает список гонщиков.
         /// </summary>
         public MainForm()
         {
@@ -25,8 +31,9 @@ namespace F1DriverSystem.WinFormsApp
         }
 
         /// <summary>
-        /// 
+        /// Обновляет таблицу гонщиков.
         /// </summary>
+        /// <param name="drivers">Список гонщиков для отображения.</param>
         private void RefreshGrid(List<Driver> drivers)
         {
             dataGridViewDrivers.DataSource = null;
@@ -40,8 +47,9 @@ namespace F1DriverSystem.WinFormsApp
         }
 
         /// <summary>
-        /// 
+        /// Возвращает выбранного в таблице гонщика.
         /// </summary>
+        /// <returns>Выбранный гонщик или null.</returns>
         private Driver GetSelectedDriver()
         {
             if (dataGridViewDrivers.CurrentRow == null)
@@ -52,7 +60,7 @@ namespace F1DriverSystem.WinFormsApp
         }
 
         /// <summary>
-        /// 
+        /// Обработчик кнопки добавления гонщика.
         /// </summary>
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -65,7 +73,7 @@ namespace F1DriverSystem.WinFormsApp
         }
 
         /// <summary>
-        /// 
+        /// Обработчик кнопки редактирования гонщика.
         /// </summary>
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -80,7 +88,7 @@ namespace F1DriverSystem.WinFormsApp
         }
 
         /// <summary>
-        /// 
+        /// Обработчик кнопки удаления гонщика.
         /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -91,7 +99,7 @@ namespace F1DriverSystem.WinFormsApp
         }
 
         /// <summary>
-        /// 
+        /// Обработчик кнопки фильтрации по команде.
         /// </summary>
         private void btnFilter_Click(object sender, EventArgs e)
         {
@@ -101,7 +109,7 @@ namespace F1DriverSystem.WinFormsApp
         }
 
         /// <summary>
-        /// 
+        /// Обработчик кнопки сброса фильтра.
         /// </summary>
         private void btnResetFilter_Click(object sender, EventArgs e)
         {
@@ -109,7 +117,7 @@ namespace F1DriverSystem.WinFormsApp
         }
 
         /// <summary>
-        /// 
+        /// Обработчик кнопки расчёта среднего количества очков.
         /// </summary>
         private void btnCalculateAvg_Click(object sender, EventArgs e)
         {

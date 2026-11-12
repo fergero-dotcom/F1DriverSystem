@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using F1DriverSystem.Core;
 using F1DriverSystem.Models;
+using Ninject;
 
 namespace F1DriverSystem.RacesConsoleApp
 {
@@ -12,7 +13,8 @@ namespace F1DriverSystem.RacesConsoleApp
             Console.OutputEncoding = Encoding.UTF8;
             try
             {
-                var logic = new RaceLogic();
+                IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
+                var logic = ninjectKernel.Get<RaceLogic>();
                 while (true)
                 {
                     Console.WriteLine("\nКАТАЛОГ ГРАН-ПРИ");
