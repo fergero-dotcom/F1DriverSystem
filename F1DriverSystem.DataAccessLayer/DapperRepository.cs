@@ -8,18 +8,18 @@ using F1DriverSystem.Models;
 namespace F1DriverSystem.DataAccessLayer
 {
     /// <summary>
-    /// 
+    /// Реализует репозиторий сущностей с использованием Dapper.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">Тип сущности.</typeparam>
     public class DapperRepository<T> : IRepository<T> where T : class, IDomainObject
     {
         private readonly string connectionString;
         private readonly EntityMap map;
 
         /// <summary>
-        /// 
+        /// Создаёт новый экземпляр класса DapperRepository.
         /// </summary>
-        /// <param name="connectionString"></param>
+        /// <param name="connectionString">Строка подключения к базе данных.</param>
         public DapperRepository(string connectionString)
         {
             this.connectionString = connectionString;
@@ -27,9 +27,9 @@ namespace F1DriverSystem.DataAccessLayer
         }
 
         /// <summary>
-        /// 
+        /// Добавляет сущность в базу данных.
         /// </summary>
-        /// <param name="entity"></param>
+        /// <param name="entity">Добавляемая сущность.</param>
         public void Add(T entity)
         {
             Validate(entity);
@@ -39,10 +39,10 @@ namespace F1DriverSystem.DataAccessLayer
         }
 
         /// <summary>
-        /// 
+        /// Удаляет сущность по идентификатору.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Идентификатор сущности.</param>
+        /// <returns>true, если сущность удалена; иначе false.</returns>
         public bool Delete(int id)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -51,9 +51,9 @@ namespace F1DriverSystem.DataAccessLayer
         }
 
         /// <summary>
-        /// 
+        /// Возвращает все сущности из базы данных.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список сущностей.</returns>
         public List<T> ReadAll()
         {
             using (var connection = new SqlConnection(connectionString))
@@ -62,10 +62,10 @@ namespace F1DriverSystem.DataAccessLayer
         }
 
         /// <summary>
-        /// 
+        /// Находит сущность по идентификатору.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Идентификатор сущности.</param>
+        /// <returns>Найденная сущность или null.</returns>
         public T ReadById(int id)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -74,10 +74,10 @@ namespace F1DriverSystem.DataAccessLayer
         }
 
         /// <summary>
-        /// 
+        /// Обновляет сущность в базе данных.
         /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
+        /// <param name="entity">Обновляемая сущность.</param>
+        /// <returns>true, если сущность обновлена; иначе false.</returns>
         public bool Update(T entity)
         {
             Validate(entity);
@@ -87,9 +87,9 @@ namespace F1DriverSystem.DataAccessLayer
         }
 
         /// <summary>
-        /// 
+        /// Проверяет корректность сущности.
         /// </summary>
-        /// <param name="entity"></param>
+        /// <param name="entity">Проверяемая сущность.</param>
         private static void Validate(T entity)
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));

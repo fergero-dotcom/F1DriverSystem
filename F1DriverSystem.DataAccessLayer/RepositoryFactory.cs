@@ -5,15 +5,15 @@ using F1DriverSystem.Models;
 namespace F1DriverSystem.DataAccessLayer
 {
     /// <summary>
-    /// 
+    /// Создаёт репозитории для работы с базой данных.
     /// </summary>
     public static class RepositoryFactory
     {
         /// <summary>
-        /// 
+        /// Создаёт репозиторий на основе настроек приложения.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <typeparam name="T">Тип сущности.</typeparam>
+        /// <returns>Репозиторий сущностей.</returns>
         public static IRepository<T> Create<T>() where T : class, IDomainObject
         {
             string provider = ConfigurationManager.AppSettings["RepositoryProvider"] ?? "EF";
@@ -24,12 +24,12 @@ namespace F1DriverSystem.DataAccessLayer
         }
 
         /// <summary>
-        /// 
+        /// Создаёт репозиторий с указанным провайдером и строкой подключения.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="provider"></param>
-        /// <param name="connectionString"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">Тип сущности.</typeparam>
+        /// <param name="provider">Провайдер доступа к данным.</param>
+        /// <param name="connectionString">Строка подключения к базе данных.</param>
+        /// <returns>Репозиторий сущностей.</returns>
         public static IRepository<T> Create<T>(string provider, string connectionString)
             where T : class, IDomainObject
         {
