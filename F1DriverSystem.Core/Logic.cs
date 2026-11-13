@@ -6,30 +6,30 @@ using F1DriverSystem.DataAccessLayer;
 namespace F1DriverSystem.Core
 {
     /// <summary>
-    /// 
+    /// Управляет данными гонщиков.
     /// </summary>
     public class Logic
     {
         private readonly IRepository<Driver> repository;
 
         /// <summary>
-        /// 
+        /// Создаёт новый экземпляр класса Logic.
         /// </summary>
         public Logic() : this(RepositoryFactory.Create<Driver>()) { }
 
         /// <summary>
-        /// 
+        /// Создаёт новый экземпляр класса Logic с указанным репозиторием.
         /// </summary>
-        /// <param name="repository"></param>
+        /// <param name="repository">Репозиторий гонщиков.</param>
         public Logic(IRepository<Driver> repository)
         {
             this.repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
         /// <summary>
-        /// 
+        /// Возвращает следующий доступный идентификатор гонщика.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Следующий доступный идентификатор.</returns>
         private int GetNextAvailableId()
         {
             var used = new HashSet<int>(repository.ReadAll().Select(x => x.Id));
@@ -39,12 +39,12 @@ namespace F1DriverSystem.Core
         }
 
         /// <summary>
-        /// 
+        /// Проверяет корректность данных гонщика.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="team"></param>
-        /// <param name="points"></param>
-        /// <returns></returns>
+        /// <param name="name">Имя гонщика.</param>
+        /// <param name="team">Команда гонщика.</param>
+        /// <param name="points">Количество очков.</param>
+        /// <returns>true, если данные корректны; иначе false.</returns>
         private bool IsValid(string name, string team, int points)
         {
             return !string.IsNullOrWhiteSpace(name) &&
@@ -52,12 +52,12 @@ namespace F1DriverSystem.Core
         }
 
         /// <summary>
-        /// 
+        /// Добавляет нового гонщика.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="team"></param>
-        /// <param name="points"></param>
-        /// <returns></returns>
+        /// <param name="name">Имя гонщика.</param>
+        /// <param name="team">Команда гонщика.</param>
+        /// <param name="points">Количество очков.</param>
+        /// <returns>true, если гонщик добавлен; иначе false.</returns>
         public bool AddDriver(string name, string team, int points)
         {
             if (!IsValid(name, team, points)) return false;
@@ -66,42 +66,42 @@ namespace F1DriverSystem.Core
         }
 
         /// <summary>
-        /// 
+        /// Возвращает всех гонщиков, отсортированных по идентификатору.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список гонщиков.</returns>
         public List<Driver> GetAllDrivers()
         {
             return repository.ReadAll().OrderBy(x => x.Id).ToList();
         }
 
         /// <summary>
-        /// 
+        /// Находит гонщика по идентификатору.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Идентификатор гонщика.</param>
+        /// <returns>Найденный гонщик или null.</returns>
         public Driver FindById(int id)
         {
             return repository.ReadById(id);
         }
 
         /// <summary>
-        /// 
+        /// Удаляет гонщика по идентификатору.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Идентификатор гонщика.</param>
+        /// <returns>true, если гонщик удалён; иначе false.</returns>
         public bool DeleteDriver(int id)
         {
             return repository.Delete(id);
         }
 
         /// <summary>
-        /// mbcx
+        /// Обновляет данные существующего гонщика.
         /// </summary>
-        /// <param name="id">ghfhng</param>
-        /// <param name="name"></param>
-        /// <param name="team"></param>
-        /// <param name="points"></param>
-        /// <returns>cb xvgf</returns>
+        /// <param name="id">Идентификатор гонщика.</param>
+        /// <param name="name">Новое имя гонщика.</param>
+        /// <param name="team">Новая команда гонщика.</param>
+        /// <param name="points">Новое количество очков.</param>
+        /// <returns>true, если гонщик обновлён; иначе false.</returns>
         public bool UpdateDriver(int id, string name, string team, int points)
         {
             if (!IsValid(name, team, points) || id <= 0) return false;
@@ -109,10 +109,10 @@ namespace F1DriverSystem.Core
         }
 
         /// <summary>
-        /// 
+        /// Возвращает гонщиков указанной команды.
         /// </summary>
-        /// <param name="team"></param>
-        /// <returns></returns>
+        /// <param name="team">Название команды.</param>
+        /// <returns>Список гонщиков.</returns>
         public List<Driver> GetDriversByTeam(string team)
         {
             if (string.IsNullOrWhiteSpace(team)) return new List<Driver>();
@@ -121,9 +121,9 @@ namespace F1DriverSystem.Core
         }
 
         /// <summary>
-        /// 
+        /// Вычисляет среднее количество очков гонщиков.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Среднее количество очков.</returns>
         public double CalculateAveragePoints()
         {
             var drivers = repository.ReadAll();
